@@ -59,6 +59,8 @@ module.exports.updateCampground = async (req, res) => {
     const { id } = req.params;
     const camp = await campground.findById(id)
     await campground.findByIdAndUpdate(id, { ...req.body.campground })
+    const geoData = await maptilerClient.geocoding.forward(req.body.campground.location, { limit: 1 });
+    campground.geometry = geoData.features[0].geometry;
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }))
     camp.images.push(...imgs)
     await camp.save()

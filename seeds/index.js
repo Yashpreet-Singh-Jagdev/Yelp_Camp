@@ -19,7 +19,7 @@ const sample = (array) => {
 
 const seedsDb = async () => {
     await campground.deleteMany({});
-    for (let i = 0; i <= 50; i++) {
+    for (let i = 0; i <= 300; i++) {
         const random1000 = Math.floor(Math.random() * 999);
         const random30 = Math.floor(Math.random() * 20) + 10;
         const location = `${cities[random1000].state} ${cities[random1000].city}`
@@ -27,18 +27,25 @@ const seedsDb = async () => {
             name: `${sample(descriptors)} ${sample(places)}`,
             location, author: "66c3c538cfb1933e1fa321b1",
             price: random30,
+            geometry: {
+                type: "Point",
+                coordinates: [
+                    cities[random1000].longitude,
+                    cities[random1000].latitude,
+                ]
+            },
             // image: `https://picsum.photos/400?random=${Math.random()}`,
 
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dresksqvq/image/upload/v1733434522/YelpCamp/wl4e5gg33en1apot9n6t.png',
-                  filename: 'YelpCamp/zkmyqy3awtkjqemat8uj',
+                    url: 'https://res.cloudinary.com/dresksqvq/image/upload/v1733434522/YelpCamp/wl4e5gg33en1apot9n6t.png',
+                    filename: 'YelpCamp/zkmyqy3awtkjqemat8uj',
                 },
                 {
-                  url: 'https://res.cloudinary.com/dresksqvq/image/upload/v1733612647/YelpCamp/nqhjguhmtf624yby7nzu.png',
-                  filename: 'YelpCamp/tm6dekyfaah1az3cvw6m',
+                    url: 'https://res.cloudinary.com/dresksqvq/image/upload/v1733612647/YelpCamp/nqhjguhmtf624yby7nzu.png',
+                    filename: 'YelpCamp/tm6dekyfaah1az3cvw6m',
                 }
-              ],
+            ],
 
             description:
                 " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae odio eos animi est iste voluptatem dicta praesentium aperiam adipisci non exercitationem iusto, quam natus labore. Tempore nulla officiis nemo quaerat? Officia vero eius nam suscipit.Optio, commodi? Nulla, laborum.Ab numquam vero quisquam dolorum blanditiis sed nihil minima odit ut, adipisci rerum.Adipisci necessitatibus sit tempora iusto facilis eos molestias. Natus, voluptatibus! In, dignissimos libero est non corrupti ad repudiandae officiis pariatur earum, repellat, necessitatibus magnam omnis labore voluptatum voluptas fugit tempora ex obcaecati veritatis rem.Minus placeat sit totam."

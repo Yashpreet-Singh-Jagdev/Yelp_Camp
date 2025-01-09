@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV !== "production"){
+if (process.env.NODE_ENV !== "production") {
     require("dotenv").config()
 }
 
@@ -66,7 +66,9 @@ mongoose
         console.log("Error in Mongoose connection");
     });
 
-
+app.get('/', (req, res) => {
+    res.render('home')
+});
 
 app.all('*', (req, res, next) => {
     next(new ExpressErr("Page not found", 404))
