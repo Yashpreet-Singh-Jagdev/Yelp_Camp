@@ -1,4 +1,4 @@
-<%layout("layouts/boilerplate")%>
+<%layout("layouts /boilerplate")%>
 
 
     <div class="row">
@@ -8,7 +8,9 @@
                     <%= err.message%>!
                 </h4>
                 <p>
-                    <%=err.stack%>
+                    <%if (process.env.NODE_ENV !=="production" ) {%>
+                        <%=err.stack%>
+                            <% } %>
                 </p>
             </div>
         </div>

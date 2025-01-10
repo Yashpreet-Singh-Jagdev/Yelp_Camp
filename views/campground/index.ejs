@@ -11,9 +11,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <%if(campground.images.length){%>
-                        <img src="<%=campground.images[0].url%>" alt="" class="img-fluid">
+                        <img crossorigin="anonymous" src="<%=campground.images[0].url%>" alt="" class="img-fluid">
                         <%}else{%>
-                            <img src="https://res.cloudinary.com/dresksqvq/image/upload/v1733434522/YelpCamp/wl4e5gg33en1apot9n6t.png"
+                            <img crossorigin="anonymous" src="https://res.cloudinary.com/dresksqvq/image/upload/v1733434522/YelpCamp/wl4e5gg33en1apot9n6t.png"
                                 alt="" class="img-fluid">
                             <% } %>
                 </div>
@@ -38,7 +38,7 @@
         <%}%>
 
             <script>
-                const maptilerApiKey = '<%-process.env.MAPTILER_API_KEY %>';
+                const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
                 const campgrounds = { features: <%-JSON.stringify(campgrounds)%> }
             </script>
             <script src="/javascripts/clusterMap.js"></script>
