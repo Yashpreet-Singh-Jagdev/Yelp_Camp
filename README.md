@@ -20,12 +20,12 @@ It was built using **EJS & Bootstrap** for the frontend, **Node.js** and **Expre
 
 3. Create a `.env` file in the root directory of the codebase and add the following keys: 
 
-
+```
 MAPTILER_API_KEY=
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_KEY=
 CLOUDINARY_SECRET=
-
+```
 
 - Get your Maptiler API key from: [Maptiler API](https://www.maptiler.com/)
 
