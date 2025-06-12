@@ -69,7 +69,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dresksqvq/", 
+                "https://res.cloudinary.com/dresksqvq/",
                 "https://images.unsplash.com/",
                 "https://api.maptiler.com/",
             ],

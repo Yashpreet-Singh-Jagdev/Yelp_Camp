@@ -1,10 +1,6 @@
 const campground = require("../models/campground");
 const cloudinary = require("cloudinary").v2;
 
-// const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding")
-// const mapBoxToken = process.env.MAPBOX_TOKEN
-// const geocoder = mbxGeocoding({ accessToken: mapBoxToken })
-
 const maptilerClient = require("@maptiler/client");
 maptilerClient.config.apiKey = process.env.MAPTILER_API_KEY;
 

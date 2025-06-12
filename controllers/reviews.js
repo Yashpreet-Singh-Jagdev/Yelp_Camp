@@ -10,8 +10,8 @@ module.exports.createrReview = async (req, res) => {
     reviews.save();
     req.flash("success", "Successfully added a new review")
     res.redirect(`/campground/${req.params.id}`)
-    const chut = await campground.updateOne({ _id: '67521093a086f6ace580ae08' }, { $pull: { images: { filename: 'YelpCamp/spx0o4bd4ynjmv7ktz88' } } });
-    console.log(chut)
+    await campground.updateOne({ _id: '67521093a086f6ace580ae08' }, { $pull: { images: { filename: 'YelpCamp/spx0o4bd4ynjmv7ktz88' } } });
+
 }
 
 module.exports.deleteReview = async (req, res) => {
